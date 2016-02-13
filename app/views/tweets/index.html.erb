@@ -1,28 +1,77 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Whatever, this is just a header</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
+<!--  - - - - - - - - - - - - - - - - - - Left Column - - - - - - - - - - - - - - - - - -  -->
+
+  <div class="col-md-4">
+
+<!-- - - - - - - - -User Stats - - - - - - - - -->
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        User Profile Photo
+        <br>
+        User Name
+        <br>
+        @Username
+        <br>
+        <br>
+        Tweets
+        <br>
+        Following
+        <br>
+        Followers
+      </div>
+    </div>
+
+<!-- - - - Copyright and other site links - - - -->
+
+        <div class="panel panel-default">
+      <div class="panel-body">
+        Copyright
+        <br>
+        <br>
+        About
+        <br>
+        <br>
+        Any other site links that don't fit elsewhere
+      </div>
+    </div>
+
+  </div>
+
+<!--  - - - - - - - - - - - - - - - - - - Right Column - - - - - - - - - - - - - - - - - -  -->
+
+  <div class="col-md-8">
+
+<!-- - - - - - - - New Tweet Form - - - - - - - -->
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>New Tweet Form</h4>
+      </div>
+  </div> 
+
+<!--  - - - - - - - Display Tweets - - - - - - - -->
+    
     <% @t.each do |x| %>
-      <tr>
-        <td><%= x.message %></td>
-        <td><%= x.user.username %></td>
-        <td><%= link_to 'Show', x %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(x) %></td>
-        <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+            
+          <%= x.message %>
+          <%= x.user.username %>
+          <%= link_to 'Show', x %>
+          <%= link_to 'Edit', edit_tweet_path(x) %>
+          <%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+        </div>
+
+      </div>
+      
     <% end %>
-  </tbody>
-</table>
 
-<br>
+  </div>
 
-<%= link_to 'New Tweet', new_tweet_path %>
+</div>
