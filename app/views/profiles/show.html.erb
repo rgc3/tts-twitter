@@ -1,6 +1,10 @@
 <div class="row">
+
+  <!-- - - - - - - - - - - Left Column - - - - - - - - - - -->
+
   <div class= "col-xs-4">
   <h3><%= @user.name %></h3>
+  <%= image_tag @user.avatar.url(:medium) %> <!-- Profile Image -->
   <h5><%= @user.username %></h5>
   <h5><p><%= @user.bio %></p></h5>
   <h5><%= @user.location %></h5>
@@ -19,6 +23,8 @@
     <%=link_to friend.name, profile_path(friend) %> <br />
   <%end%>
   </div>
+
+<!-- - - - - - - - - - - Right Column - - - - - - - - - - -->
 
   <div class= "col-xs-7">
     <div class="panel panel-default">
