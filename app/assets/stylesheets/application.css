@@ -14,6 +14,9 @@
  *= require_self
  */
 
+body {
+	background-color: #f0eaec;
+}
  #tweet {
  	margin-bottom: 0px;
  	margin-top: -1px;
