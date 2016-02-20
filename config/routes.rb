@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get "profiles/:id" => "profiles#show", as: :profile
+  get 'profiles/:id' => 'profiles#show', as: :profile
 
-  get "profiles" => "profiles#index"
+  get 'profiles' => 'profiles#index'
+
+  get "feed" => 'profiles#feed'
 
   resources :tweets do
     resource :like
