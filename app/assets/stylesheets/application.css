@@ -26,3 +26,7 @@ body {
  .cant-see-me {
 	display: none;
 }
+
+#like {
+	color: red;
+}
