@@ -39,15 +39,15 @@
       <div class="panel-body">
         <h4>New Tweet Form</h4>
       </div>
-  </div> 
+  </div>
 
 <!--  - - - - - - - Display Tweets - - - - - - - -->
-    
+
     <% @t.each do |x| %>
 
       <div class="panel panel-default" id="tweet">
         <div class="panel-body">
-            
+
           <%= x.message %>
           <%= x.user.username %>
           <%= link_to 'Show', x %>
@@ -57,7 +57,7 @@
         </div>
 
       </div>
-      
+
     <% end %>
 
   </div>

@@ -1,8 +1,9 @@
+
 <div class="row">
   <div class= "col-xs-3 panel panel-default">
     <div class="panel-body">
       <div class="row">
-        <%= image_tag(current_user.avatar.url(:thumb)) %>
+        <%= image_tag(current_user.avatar.url(:small)) %>
         <h3><%= current_user.name %></h3>
         <h5><%= current_user.username %></h5>
       </div>
@@ -56,3 +57,4 @@
       </div>
 
   </div>
+</div>
