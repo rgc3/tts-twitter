@@ -8,7 +8,6 @@ class TweetsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -30,21 +29,20 @@ class TweetsController < ApplicationController
     end
   end
 
-    def update
+  def update
     respond_to do |format|
-        if @tweet.update(tweet_params)
-          format.html { redirect_to @tweet, notice: 'Post was successfully updated.' }
+      if @tweet.update(tweet_params)
+        format.html {redirect_to @tweet, notice: 'Post was successfully updated.'}
       else
         format.html { render :edit }
-
       end
     end
   end
 
   def destroy
-      @tweet.destroy
+    @tweet.destroy
     respond_to do |format|
-      format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
+    format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
     end
   end
 
@@ -52,10 +50,9 @@ class TweetsController < ApplicationController
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
-    end
+  end
 
   def tweet_params
     params.require(:tweet).permit(:message, :user_id)
   end
-
 end

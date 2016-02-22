@@ -12,6 +12,6 @@ class ProfilesController < ApplicationController
 
   def feed
     @tweet = Tweet.new
-    @tweets = Tweet.where("user_id in (?) OR user_id = ?", current_user.friend_ids, current_user).order('created_at DESC')
+    @tweets = Tweet.where('user_id in (?) OR user_id = ?', current_user.friend_ids, current_user).order('created_at DESC')
   end
 end

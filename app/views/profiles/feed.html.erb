@@ -43,12 +43,12 @@
         <br />
         <% if current_user.likes?(tweet) %>
           <%= link_to tweet_like_path(tweet), method: :delete do %>
-            <i class="glyphicon glyphicon-heart"></i>
+            <i class="glyphicon glyphicon-heart" style="color:red"></i>
           <% end %>
 
           <% else %>
             <%= link_to tweet_like_path(tweet), method: :post do %>
-            <i class="glyphicon glyphicon-heart"></i>
+            <i class="glyphicon glyphicon-heart-empty"></i>
           <% end %>
         <% end %>
         <br />
