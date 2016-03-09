@@ -1,34 +1,26 @@
 <nav class="navbar navbar-default">
   <div class="container">
 
-    <!-- Brand and toggle get grouped for better mobile display -->
-
+<!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <%=link_to profile_path(current_user), class: "navbar-brand" do %>
+      <%=link_to profile_path(current_user), class: "navbar-brand" do %>
         <i class="glyphicon glyphicon-home"></i>
-        <%end%>
-
+      <%end%>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+<!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
       <ul class="nav navbar-nav">
-
         <li><%= link_to 'Feed', feed_path %></li>
-
       </ul>
 
-
 <!-- - - - - - - - - - - Navbar right and search form - - - - - - - - - -->
-
       <ul class="nav navbar-nav navbar-right">
         <li>
           <form class="navbar-form" role="search">
@@ -40,9 +32,7 @@
         </li>
 
 <!-- - - Dropdown with profile and sign out links - - -->
-
         <li><%= link_to 'Users', profiles_path %></li>
-
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><div class="navpic"><%= image_tag(current_user.avatar.url(:tiny)) %></div></a>
           <ul class="dropdown-menu">
@@ -53,13 +43,9 @@
                 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
               <% end %>
             </li>
-          </ul>
-
+          </ul><!-- Dropdown Menu -->
         <li><%= link_to 'Tweet', new_tweet_path %></li>
-
-      </ul>
-
+      </ul><!-- Navbar-right -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-
 </nav>

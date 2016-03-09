@@ -25,9 +25,8 @@
       <h5><%= current_user.location %></h5>
       <h5>Joined on <%= current_user.created_at.strftime("%B %Y") %></h5>
     </div>
-    </div>
+  </div>
     <div class= "col-xs-1"></div>
-
     <div class= "col-xs-7 panel panel-default">
       <div class="panel-body">
         <div class="well well-lg">
@@ -45,7 +44,6 @@
           <%= link_to tweet_like_path(tweet), method: :delete do %>
             <i class="glyphicon glyphicon-heart" style="color:red"></i>
           <% end %>
-
           <% else %>
             <%= link_to tweet_like_path(tweet), method: :post do %>
             <i class="glyphicon glyphicon-heart-empty"></i>
@@ -54,7 +52,6 @@
         <br />
         <hr>
         <% end %>
-      </div>
-
-  </div>
-</div>
+      </div><!-- Panel Body -->
+  </div><!-- Panel -->
+</div><!-- Row -->

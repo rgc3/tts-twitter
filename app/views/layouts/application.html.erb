@@ -12,15 +12,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" %>
     <%= csrf_meta_tags %>
-</head>
+  </head>
 
-<body>
+  <body>
 
-<%= render 'shared/nav' %>
+    <%= render 'shared/navbar' %>
 
-<div class='container'>
-<%= yield %>
-</div>
+    <div class='container'>
+      <%= yield %>
+    </div>
 
-</body>
+  </body>
 </html>

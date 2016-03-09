@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
   end
   def show
     @relationship = Relationship.find(params[:id])
-    end
+  end
 
   # POST /relationships
   # POST /relationships.json

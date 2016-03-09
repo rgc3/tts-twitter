@@ -21,7 +21,6 @@
                   </div>
          </div>
 
-
         <h5><p><%= @user.bio %></p></h5>
         <h5><%= @user.location %></h5>
         <h5>Joined on <%= @user.created_at.strftime("%B %Y") %></h5>
@@ -35,33 +34,32 @@
             <%= link_to "Follow", relationships_path(:friend_id => @user), method: :post, class: "btn btn_success" %>
           <% end %>
         <% end %>
-      </div>
-    </div>
+    </div><!-- Panel Body -->
+  </div><!-- Panel -->
     <div class= "col-xs-1"></div>
 
   <div class= "col-xs-7 panel panel-default">
       <% @user.tweets.each do |tweet| %>
         <div class="panel-body">
           <%= image_tag(tweet.user.avatar.url(:thumb)) %>
-        <strong><%= tweet.user.username %> </strong><small>tweeted <%= time_ago_in_words(tweet.created_at) %> ago</small>
-        <br />
-        <br />
-        <%= tweet.message %>
+          <strong><%= tweet.user.username %> </strong><small>tweeted <%= time_ago_in_words(tweet.created_at) %> ago</small>
+          <br />
+          <br />
+          <%= tweet.message %>
         </div>
         <div class="panel-body">
-
-        <% if current_user.likes?(tweet) %>
-          <%= link_to tweet_like_path(tweet), method: :delete do %>
-            <i class="glyphicon glyphicon-heart" style="color:red"></i>
-          <%end%>
-         <% else %>
-          <%= link_to tweet_like_path(tweet), method: :post do %>
-            <i class="glyphicon glyphicon-heart-empty"></i>
-          <%end%>
-        <% end %>
-        <br />
-        <hr>
-        </div>
+          <% if current_user.likes?(tweet) %>
+            <%= link_to tweet_like_path(tweet), method: :delete do %>
+              <i class="glyphicon glyphicon-heart" style="color:red"></i>
+            <%end%>
+           <% else %>
+            <%= link_to tweet_like_path(tweet), method: :post do %>
+              <i class="glyphicon glyphicon-heart-empty"></i>
+            <%end%>
+          <% end %>
+          <br />
+          <hr>
+        </div><!-- Panel Body -->
       <% end %>
-    </div>
-  </div>
+    </div><!-- Panel -->
+  </div><!-- Row -->
